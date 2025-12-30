@@ -1,0 +1,112 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-bg-primary);
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width-lg);
+  width: 100%;
+  padding: var(--spacing-ml) var(--spacing-xl);
+}
+
+.logoButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.logoLabel {
+  font-size: var(--font-size-24);
+  color: var(--color-text-primary);
+}
+
+.logoIcon {
+  width: var(--spacing-xl);
+}
+
+.navSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xlg);
+}
+
+.navItem {
+  font-size: var(--font-size-18);
+  font-weight: var(--font-weight-light);
+  color: var(--color-text-secondary);
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-ml);
+}
+
+.themeIcon {
+  width: var(--spacing-xl);
+}
+
+.langText {
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-secondary);
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+  z-index: 30;
+  color: var(--color-text-secondary);
+}
+
+.chevronIcon {
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.mobileMenu {
+  display: none;
+  position: absolute;
+  top: var(--spacing-xxxlm);
+  right: var(--spacing-lg);
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-default);
+  padding: var(--spacing-xl);
+  flex-direction: column;
+  gap: var(--spacing-ml);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-base);
+}
+
+.menuVisible {
+  display: flex !important;
+}
+
+@media (max-width: 1024px) {
+  .navSection,
+  .rightSection {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+}

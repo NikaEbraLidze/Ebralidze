@@ -1,0 +1,80 @@
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-main, system-ui, sans-serif);
+  transition: background-color var(--transition-fast, 0.3s ease),
+    color var(--transition-fast, 0.3s ease);
+}
+
+.card {
+  background: var(--color-bg-surface);
+  padding: var(--spacing-xlg); /* 32px */
+  border-radius: var(--radius-lg); /* 12px */
+  width: 26.25em; /* 420px / 16px */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* subtle shadow */
+}
+
+.title {
+  margin-bottom: var(--spacing-l); /* 18px */
+  font-size: var(--font-size-24); /* 24px */
+  font-weight: var(--font-weight-semibold); /* 600 */
+  line-height: var(--line-height-tight); /* 1.2 */
+  color: var(--color-text-primary);
+}
+
+.description {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-16); /* 16px */
+  line-height: var(--line-height-normal);
+}
+
+.actions {
+  display: flex;
+  gap: var(--spacing-md); /* 10px */
+  margin-top: var(--spacing-xxxlm); /* 60px */
+}
+
+/* ===== Buttons ===== */
+
+.button {
+  flex: 1;
+  padding: var(--spacing-m); /* 12px */
+  border-radius: var(--radius-md); /* 6px */
+  border: none;
+  cursor: pointer;
+
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-on-accent);
+
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-normal);
+
+  transition: background-color var(--transition-fast, 0.3s ease),
+    color var(--transition-fast, 0.3s ease),
+    box-shadow var(--transition-fast, 0.3s ease);
+}
+
+.button:hover:not(.disabled) {
+  background-color: var(--color-accent-hover);
+}
+
+.button:active:not(.disabled) {
+  background-color: var(--color-accent-active);
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 var(--spacing-xxs) var(--color-accent-focus);
+}
+
+.button.disabled {
+  background-color: var(--color-accent-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}

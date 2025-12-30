@@ -1,0 +1,83 @@
+.container {
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  transition: color 0.3s ease;
+}
+
+.underline {
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.regular {
+  font-family: "Inter", sans-serif;
+  font-weight: var(--font-weight-regular);
+}
+
+.medium {
+  font-family: "Inter", sans-serif;
+  font-weight: var(--font-weight-medium);
+}
+
+.semibold {
+  font-family: "Inter", sans-serif;
+  font-weight: var(--font-weight-semibold);
+}
+
+.bold {
+  font-family: "Inter", sans-serif;
+  font-weight: var(--font-weight-bold);
+}
+
+.size-10 {
+  font-size: var(--font-size-10);
+}
+
+.size-12 {
+  font-size: var(--font-size-12);
+}
+
+.size-13 {
+  font-size: var(--font-size-13);
+}
+
+.size-14 {
+  font-size: var(--font-size-14);
+}
+
+.size-16 {
+  font-size: var(--font-size-16);
+}
+
+.size-18 {
+  font-size: var(--font-size-18);
+}
+
+.size-20 {
+  font-size: var(--font-size-20);
+}
+
+.size-24 {
+  font-size: var(--font-size-24);
+}
+
+.size-28 {
+  font-size: var(--font-size-28);
+}
+
+.size-32 {
+  font-size: var(--font-size-32);
+}
+
+.size-36 {
+  font-size: var(--font-size-36);
+}
+
+.size-40 {
+  font-size: var(--font-size-40);
+}
+
+.size-48 {
+  font-size: var(--font-size-48);
+}

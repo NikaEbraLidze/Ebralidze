@@ -1,0 +1,114 @@
+/* Base tokens */
+
+/* All imports must come first */
+@import "./styles/variables.css";
+@import "./styles/spacing.css";
+
+/* Themes */
+@import "./styles/theme/light.css";
+@import "./styles/theme/dark.css";
+
+/* Reset and base styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-bg, #fff);
+  color: var(--color-text, #000);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+:root {
+  font-size: 16px; /* base font size */
+}
+
+/* Scale down root font-size on smaller screens for proportional scaling */
+/* Responsive based on viewport width */
+@media (max-width: 1200px) {
+  :root {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+/* Responsive based on viewport height */
+@media (max-height: 800px) {
+  :root {
+    font-size: 15px;
+  }
+}
+
+@media (max-height: 700px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media (max-height: 600px) {
+  :root {
+    font-size: 13px;
+  }
+}
+
+@media (max-height: 500px) {
+  :root {
+    font-size: 12px;
+  }
+}

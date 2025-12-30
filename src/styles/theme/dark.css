@@ -1,0 +1,18 @@
+/* Dark Theme */
+[data-theme="dark"] {
+  --color-bg-primary: #0f1115;
+  --color-bg-surface: #161a20;
+
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #ffffffcc;
+
+  --color-accent-primary: #17b8a6;
+  --color-accent-muted: #17b8a6cc;
+
+  --color-accent-hover: #1ccbb6;
+  --color-accent-active: #14b8a6;
+  --color-accent-disabled: #17b8a660;
+  --color-accent-focus: #17b8a680;
+
+  --color-border-default: #2a2f38;
+}

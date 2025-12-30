@@ -1,0 +1,18 @@
+/* Light Theme */
+[data-theme="light"] {
+  --color-bg-primary: #ffffff;
+  --color-bg-surface: #ffffff;
+
+  --color-text-primary: #000000;
+  --color-text-secondary: #000000cc;
+
+  --color-accent-primary: #17b8a6;
+  --color-accent-muted: #17b8a6cc;
+
+  --color-accent-hover: #14a796;
+  --color-accent-active: #119485;
+  --color-accent-disabled: #17b8a680;
+  --color-accent-focus: #17b8a64d;
+
+  --color-border-default: #aeaeae;
+}

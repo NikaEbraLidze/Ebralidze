@@ -1,0 +1,27 @@
+/* Spacing Variables (using em units for proportional scaling) */
+/* Base: 1em = parent element's font-size */
+:root {
+  /* Spacing scale in em units (scales proportionally with font-size) */
+  --spacing-zero: 0;
+  --spacing-one: 0.0625em; /* 1px */
+  --spacing-xxxs: 0.125em; /* 2px */
+  --spacing-xxs: 0.25em; /* 4px */
+  --spacing-xs: 0.375em; /* 6px */
+  --spacing-s: 0.5em; /* 8px */
+  --spacing-md: 0.625em; /* 10px */
+  --spacing-m: 0.75em; /* 12px */
+  --spacing-reg: 0.875em; /* 14px */
+  --spacing-ml: 1em; /* 16px */
+  --spacing-l: 1.125em; /* 18px */
+  --spacing-lg: 1.25em; /* 20px */
+  --spacing-xl: 1.5em; /* 24px */
+  --spacing-xlm: 1.75em; /* 28px */
+  --spacing-xxlm: 1.875em; /* 30px */
+  --spacing-xlg: 2em; /* 32px */
+  --spacing-xxl: 2.25em; /* 36px */
+  --spacing-xxxl: 3em; /* 48px */
+  --spacing-xxxlm: 3.75em; /* 60px */
+  --spacing-xc: 5.625em; /* 90px */
+
+  --max-width-lg: 90em; /* 1440px */
+}
