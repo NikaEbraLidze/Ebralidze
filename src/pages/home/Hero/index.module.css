@@ -1,0 +1,94 @@
+.heroSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-xxxl);
+  width: 100%;
+  max-width: var(--max-width-sm);
+}
+
+.profilePhotoWrapper {
+  width: 17em;
+  height: 19em;
+  border-radius: var(--radius-base);
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--spacing-ml);
+  flex: 1;
+}
+
+.heading {
+  font-size: var(--font-size-28);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.title {
+  font-size: var(--font-size-28);
+}
+
+.description {
+  font-size: var(--font-size-16);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.ctaGroup {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.ctaButton {
+  padding: var(--spacing-m) var(--spacing-xl);
+  border-radius: 0;
+}
+
+.ctaButton:hover {
+  background-color: var(--color-accent-hover);
+  transition: background-color var(--transition-fast, 0.3s ease);
+  border-radius: var(--radius-sm);
+}
+
+.ctaButton:active {
+  background-color: var(--color-accent-active);
+  border-radius: var(--radius-sm);
+}
+
+.ctaButton:focus {
+  background-color: var(--color-accent-focus);
+  border-radius: var(--radius-sm);
+}
+
+.primaryButtonLabel {
+  color: var(--color-bg-primary);
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content {
+    align-items: center;
+  }
+}

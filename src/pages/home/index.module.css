@@ -1,8 +1,11 @@
 .home {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: var(--gap-section);
+  padding: var(--gap-section) var(--spacing-lg);
 
   background: var(--color-bg-primary);
   color: var(--color-text-primary);

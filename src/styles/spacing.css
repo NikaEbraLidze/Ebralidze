@@ -23,5 +23,9 @@
   --spacing-xxxlm: 3.75em; /* 60px */
   --spacing-xc: 5.625em; /* 90px */
 
+  --gap-section: 7.5em; /* 120px */
+
+  --max-width-sm: 58em; /* 928px */
+  --max-width-md: 58em; /* 1024px */
   --max-width-lg: 90em; /* 1440px */
 }
