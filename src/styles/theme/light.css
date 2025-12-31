@@ -3,6 +3,8 @@
   --color-bg-primary: #ffffff;
   --color-bg-surface: #ffffff;
 
+  --color-card-bg: #161a20;
+
   --color-text-primary: #000000;
   --color-text-secondary: #000000cc;
 
@@ -13,6 +15,11 @@
   --color-accent-active: #119485;
   --color-accent-disabled: #17b8a680;
   --color-accent-focus: #17b8a64d;
+
+  --color-link: #0fa395;
+  --color-link-hover: #17b8a6;
+  --color-link-active: #0c8f83;
+  --color-link-visited: #0d7f75;
 
   --color-border-default: #aeaeae;
 }

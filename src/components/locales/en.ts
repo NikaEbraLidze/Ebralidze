@@ -35,6 +35,29 @@ const en = {
       },
       profileAlt: "Nikoloz Ebralidze profile photo",
     },
+    exploreWork: {
+      heading: "Explore My Work",
+      description: "My academic background and professional certifications",
+      projects: {
+        earthVoyage: {
+          title: "Earth Voyage",
+          url: "earthvoyage.us",
+          role: "Software Engineer",
+          period: "2025 May - Present",
+          description:
+            "For this postcard online service platform, I engineered the full-stack architecture using React and Node.js. I implemented secure reservation workflows, optimized database queries, and ensured a responsive, high-performance user interface.",
+          imageAlt: "Earth Voyage logo",
+        },
+        tourlify: {
+          title: "Tourlify",
+          role: "Backend Developer",
+          period: "2024 Dec - Present",
+          description:
+            "Building this tourism management dashboard, I developed reusable UI components and scalable backend services. I focused on implementing complex data visualization, real-time synchronization, and robust administrative features.",
+          imageAlt: "Tourlify logo",
+        },
+      },
+    },
   },
   footer: {
     socMedia: {

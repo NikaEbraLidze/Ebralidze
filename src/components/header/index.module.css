@@ -73,10 +73,15 @@
   color: var(--color-text-secondary);
 }
 
+.more {
+  color: var(--color-text-secondary);
+}
+
 .chevronIcon {
   display: flex;
   align-items: center;
   transition: transform 0.2s ease;
+  color: var(--color-text-secondary);
 }
 
 .chevronOpen {

@@ -80,6 +80,7 @@ export const Header = () => {
             onClick={toggleMobileMenu}
             label={t("mobileMenu")}
             variant="text"
+            labelClassName={styles.more}
             rightIcon={<ChevronIcon />}
             rightIconClassName={`${styles.chevronIcon} ${
               mobileMenuOpen ? styles.chevronOpen : ""
