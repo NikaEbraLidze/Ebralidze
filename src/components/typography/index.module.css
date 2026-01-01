@@ -10,6 +10,10 @@
   text-underline-offset: 0.2em;
 }
 
+.light {
+  font-weight: var(--font-weight-light);
+}
+
 .regular {
   font-family: "Inter", sans-serif;
   font-weight: var(--font-weight-regular);
@@ -28,6 +32,18 @@
 .bold {
   font-family: "Inter", sans-serif;
   font-weight: var(--font-weight-bold);
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
 }
 
 .size-10 {

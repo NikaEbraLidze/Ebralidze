@@ -3,6 +3,7 @@ import styles from "./index.module.css";
 import { useTheme } from "../../utils/hooks/themeContext";
 import { Hero } from "./Hero";
 import { ExploreMyWork } from "./ExploreMyWork";
+import { FeaturedProjects } from "./FeaturedProjects";
 
 function Home() {
   const { t, lang, setLang } = useLang();
@@ -12,6 +13,7 @@ function Home() {
     <div className={styles.home} data-theme={theme}>
       <Hero />
       <ExploreMyWork />
+      <FeaturedProjects />
       <div className={styles.card}>
         <h1 className={styles.title}>{t.title}</h1>
         <p className={styles.description}>{t.description}</p>

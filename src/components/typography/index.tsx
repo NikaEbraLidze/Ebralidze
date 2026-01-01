@@ -9,6 +9,7 @@ export const classNames = (
 
 export const Typography = ({
   weight = "regular",
+  align = "left",
   size = 16,
   underline = false,
   children,
@@ -19,6 +20,7 @@ export const Typography = ({
   const combinedClassName = classNames([
     styles.container,
     styles[weight],
+    styles[align],
     styles[`size-${size}`],
     underline && styles.underline,
     className,

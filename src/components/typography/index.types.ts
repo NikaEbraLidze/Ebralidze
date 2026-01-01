@@ -1,6 +1,13 @@
 import type { ReactNode } from "react";
 
-export type TypographyWeights = "regular" | "medium" | "semibold" | "bold";
+export type TypographyWeights =
+  | "light"
+  | "regular"
+  | "medium"
+  | "semibold"
+  | "bold";
+
+export type TypographyAlign = "left" | "right" | "center";
 
 export type TypographySize =
   | 10
@@ -35,6 +42,12 @@ export interface TypographyProps {
    * @default 'regular'
    */
   weight?: TypographyWeights;
+
+  /**
+   * Text align
+   * @default 'left'
+   */
+  align?: TypographyAlign;
 
   /**
    * Font size in pixels (converted to em units)

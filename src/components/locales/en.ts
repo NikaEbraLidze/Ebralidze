@@ -58,6 +58,36 @@ const en = {
         },
       },
     },
+    featuredProjects: {
+      heading: "Featured Projects",
+      codeLink: "Code",
+      projects: {
+        platrack: {
+          title: "Platrack",
+          description:
+            "Unified search interface aggregating results from multiple platforms (YouTube, TikTok, Wikipedia, Spotify). Built to demonstrate proficiency in backend development, RESTful API design, and third-party API integration.",
+          imageAlt: "Platrack search platform interface",
+        },
+        csharp: {
+          title: "C# Projects",
+          description:
+            "Developed four C# applications—a calculator, two games, and an ATM system—focusing on Single Responsibility and robust exception handling. Implemented data persistence using JSON, XML, and CSV formats.",
+          imageAlt: "C# project preview",
+        },
+        inboxify: {
+          title: "Inboxify",
+          description:
+            "A full-featured email platform with functionality for creating accounts, receiving, and sending emails. Features great responsiveness and intuitive UI/UX.",
+          imageAlt: "Inboxify email platform logo",
+        },
+        ecommerce: {
+          title: "E-commerce",
+          description:
+            "A full-fledged watch sales website built with optimized ReactJS code. The site is fully responsive for all devices and includes professional e-commerce functionalities.",
+          imageAlt: "Watch e-commerce website preview",
+        },
+      },
+    },
   },
   footer: {
     socMedia: {
