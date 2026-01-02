@@ -108,6 +108,44 @@ const en = {
         },
       },
     },
+    contact: {
+      heading: "Contact Me",
+      description:
+        "I specialize in building high-quality web applications. Whether you have a specific project or a raw idea, let's connect and turn it into reality.",
+      form: {
+        name: {
+          label: "Name",
+          error: {
+            required: "Name is required.",
+          },
+        },
+        email: {
+          label: "Email",
+          helper: "We'll never share your email",
+          error: {
+            required: "Email is required.",
+            format: "Wrong email format",
+          },
+        },
+        subject: {
+          label: "Subject",
+          error: {
+            required: "Subject is required.",
+          },
+        },
+        message: {
+          label: "Message",
+          error: {
+            required: "Message is required.",
+          },
+        },
+        button: {
+          default: "Let's build something",
+          sending: "Sending...",
+          sent: "Sent!",
+        },
+      },
+    },
   },
   footer: {
     socMedia: {

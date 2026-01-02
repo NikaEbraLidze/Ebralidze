@@ -22,4 +22,17 @@
   --color-link-visited: #6faea6;
 
   --color-border-default: #2a2f38;
+
+  --input-border: #17b8a64d;
+  --input-border-focus: var(--color-accent-primary);
+  --input-border-filled: #aeaeae;
+
+  --input-text: var(--color-text-primary);
+
+  --input-label: #999999;
+  --input-label-focus: var(--color-accent-primary);
+
+  --input-border-error: #e53935;
+  --input-error-text: #e53935;
+  --input-helper-text: #777777;
 }

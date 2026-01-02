@@ -1,0 +1,55 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: var(--max-width-md);
+  gap: var(--spacing-xxl);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-ml);
+  text-align: center;
+}
+.description {
+  max-width: 60ch;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl);
+  width: 100%;
+  max-width: 30em;
+}
+
+.submitButton {
+  padding: var(--spacing-m) var(--spacing-xl);
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
+.submitButton:active:not(:disabled) {
+  background-color: var(--color-accent-active);
+  transform: translateY(0);
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background-color: var(--color-bg-disabled);
+}
+
+.submitButtonLabel {
+  color: var(--color-bg-primary);
+  font-weight: 600;
+}

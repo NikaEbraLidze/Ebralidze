@@ -1,0 +1,103 @@
+/* === LAYOUT === */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  position: relative;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* === INPUT FIELD === */
+.input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--input-border);
+  padding: var(--spacing-m) 0 var(--spacing-s);
+  font-size: var(--font-size-16);
+  color: var(--input-text);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+/* Input States */
+.input:focus {
+  border-bottom-color: var(--input-border-focus);
+}
+
+.input.filled {
+  border-bottom-color: var(--input-border-focus);
+}
+
+/* Error State for Input */
+.errorState .input {
+  border-bottom-color: var(--input-border-error);
+}
+
+/* === LABEL (FLOATING) === */
+.label {
+  position: absolute;
+  left: 0;
+  bottom: var(--spacing-md);
+  font-size: var(--font-size-16);
+  color: var(--input-label);
+  pointer-events: none;
+  transform-origin: top left;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Label - Raised State (Focus or Filled) */
+.input:focus + .label,
+.labelRaised {
+  transform: translateY(-120%) scale(0.75);
+  color: var(--input-label-focus);
+}
+
+/* Error State for Label */
+.errorState .label {
+  color: var(--input-error-text);
+}
+
+/* === ICON LOGIC === */
+.icon {
+  margin-right: var(--spacing-s);
+  display: flex;
+  align-items: center;
+  color: var(--color-text-secondary);
+}
+
+/* Label offset when icon is present */
+.labelWithIcon {
+  left: var(--spacing-xxl); /* 36px */
+}
+
+/* When raised, label returns to start position or stays aligned */
+.input:focus + .labelWithIcon,
+.labelRaised.labelWithIcon {
+  transform: translate(calc(var(--spacing-xxl) * -1), -160%) scale(0.75);
+}
+
+/* === HELPER & ERROR TEXT === */
+.helperText,
+.errorText {
+  font-size: var(--font-size-12);
+  line-height: var(--line-height-tight);
+  margin-top: var(--spacing-xxxs);
+}
+
+.helperText {
+  color: var(--input-helper-text);
+}
+
+.errorText {
+  color: var(--input-error-text);
+}
