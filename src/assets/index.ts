@@ -18,6 +18,9 @@ import Node from "./icons/nodejs.svg";
 import Javascript from "./icons/java-script_1199124.svg";
 import CSharp from "./icons/c_6132222.svg";
 import ReactIcon from "./icons/atom_2256284.svg";
+import FullStack from "./icons/code.svg";
+import UIUX from "./icons/brush.svg";
+import SEO from "./icons/global-search.svg";
 
 export {
   ProfilePhoto,
@@ -43,4 +46,7 @@ export {
   Javascript,
   CSharp,
   ReactIcon,
+  FullStack,
+  UIUX,
+  SEO,
 };

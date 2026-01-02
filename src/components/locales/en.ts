@@ -88,6 +88,26 @@ const en = {
         },
       },
     },
+    myService: {
+      heading: "My Service",
+      subtitle:
+        "I provide end-to-end web development solutions that combine clean code, modern design, and performance optimization.",
+      services: {
+        fullstack: {
+          description:
+            "Full-Stack development with secure, scalable databases.",
+          imageAlt: "Full-stack development icon",
+        },
+        uiux: {
+          description: "Modern UI/UX design for seamless user experiences.",
+          imageAlt: "UI/UX design icon",
+        },
+        seo: {
+          description: "SEO and performance optimization to grow online.",
+          imageAlt: "SEO and optimization icon",
+        },
+      },
+    },
   },
   footer: {
     socMedia: {

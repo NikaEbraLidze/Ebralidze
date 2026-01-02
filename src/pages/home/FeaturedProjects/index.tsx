@@ -1,17 +1,8 @@
 import { Typography } from "@/components/typography";
 import styles from "./index.module.css";
-import { projectsData, type IProjectData } from "./data";
+import { projectsData } from "./data";
 import { useLocalizedText } from "@/utils/hooks/useLocalizedText";
-
-interface ProjectCardProps {
-  data: IProjectData;
-  trans: {
-    title: string;
-    description: string;
-    imageAlt: string;
-    codeBtn: string;
-  };
-}
+import type { ProjectCardProps } from "./index.types";
 
 const ProjectCard = ({ data, trans }: ProjectCardProps) => {
   const { repoUrl, techStack, imageUrl } = data;

@@ -91,4 +91,10 @@
   .content {
     align-items: center;
   }
+
+  .heading,
+  .title,
+  .description {
+    text-align: center;
+  }
 }

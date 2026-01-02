@@ -4,8 +4,9 @@ import { useTheme } from "../../utils/hooks/themeContext";
 import { Hero } from "./Hero";
 import { ExploreMyWork } from "./ExploreMyWork";
 import { FeaturedProjects } from "./FeaturedProjects";
+import { MyService } from "./MyService";
 
-function Home() {
+const Home = () => {
   const { t, lang, setLang } = useLang();
   const { theme, toggleTheme } = useTheme();
 
@@ -14,6 +15,7 @@ function Home() {
       <Hero />
       <ExploreMyWork />
       <FeaturedProjects />
+      <MyService />
       <div className={styles.card}>
         <h1 className={styles.title}>{t.title}</h1>
         <p className={styles.description}>{t.description}</p>
@@ -33,6 +35,6 @@ function Home() {
       </div>
     </div>
   );
-}
+};
 
 export default Home;

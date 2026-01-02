@@ -10,14 +10,7 @@ import {
   SearchPlatform,
   CSharpProject,
 } from "@/assets/index";
-
-export interface IProjectData {
-  id: number;
-  key: string;
-  repoUrl: string;
-  imageUrl: string;
-  techStack: string[];
-}
+import type { IProjectData } from "./index.types";
 
 export const projectsData: IProjectData[] = [
   {
