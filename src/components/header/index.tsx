@@ -12,6 +12,8 @@ export const Header = () => {
     toggleLang,
     toggleTheme,
     toggleMobileMenu,
+    handleLogoClick,
+    handleSectionClick,
   } = useHeaderContainer();
 
   return (
@@ -28,6 +30,7 @@ export const Header = () => {
             containerClassName={styles.logoButtons}
             labelClassName={styles.logoLabel}
             leftIconClassName={styles.logoIcon}
+            onClick={handleLogoClick}
           />
         </div>
 
@@ -37,16 +40,19 @@ export const Header = () => {
             label={t("nav.home")}
             variant="text"
             labelClassName={styles.navItem}
+            onClick={handleLogoClick}
           />
           <Button
             label={t("nav.about")}
             variant="text"
             labelClassName={styles.navItem}
+            onClick={() => handleSectionClick("my-work")}
           />
           <Button
             label={t("nav.contact")}
             variant="text"
             labelClassName={styles.navItem}
+            onClick={() => handleSectionClick("contact")}
           />
         </nav>
 

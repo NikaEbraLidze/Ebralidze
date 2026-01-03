@@ -8,7 +8,7 @@ export const Hero = () => {
   const t = useLocalizedText("home.heroSection");
 
   return (
-    <section className={styles.heroSection}>
+    <section className={styles.heroSection} id="hero">
       <div className={styles.profilePhotoWrapper}>
         <img
           src={ProfilePhoto}

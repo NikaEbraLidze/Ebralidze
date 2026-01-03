@@ -6,7 +6,7 @@ const ka = {
     logo: "ებრალიძე",
     nav: {
       home: "მთავარი",
-      about: "ჩემ შესახებ",
+      about: "პორტფოლიო",
       contact: "კონტაქტი",
     },
     mobileMenu: "მეტი",

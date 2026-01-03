@@ -24,7 +24,7 @@ export const ContactMe = () => {
   };
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="contact">
       <div className={styles.header}>
         <Typography
           as="h2"

@@ -6,7 +6,7 @@ const en = {
     logo: "Ebralidze",
     nav: {
       home: "Home",
-      about: "About",
+      about: "Portfolio",
       contact: "Contact",
     },
     mobileMenu: "More",

@@ -8,7 +8,7 @@ export const ExploreMyWork = () => {
   const t = useLocalizedText("home.exploreWork");
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="my-work">
       <div className={styles.header}>
         <Typography as="h2" className={styles.heading}>
           {t("heading")}
