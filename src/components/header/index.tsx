@@ -13,6 +13,7 @@ export const Header = () => {
     toggleTheme,
     toggleMobileMenu,
     handleLogoClick,
+    handleBlogClick,
     handleSectionClick,
   } = useHeaderContainer();
 
@@ -43,10 +44,10 @@ export const Header = () => {
             onClick={handleLogoClick}
           />
           <Button
-            label={t("nav.about")}
+            label={t("nav.blog")}
             variant="text"
             labelClassName={styles.navItem}
-            onClick={() => handleSectionClick("my-work")}
+            onClick={handleBlogClick}
           />
           <Button
             label={t("nav.contact")}

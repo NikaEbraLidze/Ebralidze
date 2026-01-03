@@ -40,6 +40,12 @@ export const useHeaderContainer = () => {
     setMobileMenuOpen(false);
   };
 
+  const handleBlogClick = () => {
+    navigate("/blog");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setMobileMenuOpen(false);
+  };
+
   const handleSectionClick = (sectionId: string) => {
     if (window.location.pathname !== "/") {
       navigate("/");
@@ -65,6 +71,7 @@ export const useHeaderContainer = () => {
     toggleTheme,
     toggleMobileMenu,
     handleLogoClick,
+    handleBlogClick,
     handleSectionClick,
   };
 };

@@ -1,7 +1,17 @@
 import { lazy, Suspense } from "react";
 import type { RouteConfig } from "./types";
 
-const Home = lazy(() => import("../pages/home/index"));
+const Home = lazy(() => import("@/pages/home/index"));
+const Blog = lazy(() =>
+  import("@/pages/blog/container").then((module) => ({
+    default: module.BlogContainer,
+  }))
+);
+const BlogPost = lazy(() =>
+  import("@/pages/blog-post/container").then((module) => ({
+    default: module.BlogPostContainer,
+  }))
+);
 
 const Loading = () => (
   <div
@@ -16,9 +26,7 @@ const Loading = () => (
   </div>
 );
 
-const withSuspense = (
-  Component: React.LazyExoticComponent<React.ComponentType>
-) => (
+const withSuspense = (Component: React.ComponentType) => (
   <Suspense fallback={<Loading />}>
     <Component />
   </Suspense>
@@ -29,6 +37,12 @@ export const routeConfig: RouteConfig[] = [
     path: "/",
     element: withSuspense(Home),
   },
-  // აქ შეგიძლია დაამატო სხვები ისე, მაგალითად:
-  // { path: "/about", element: withSuspense(About) }
+  {
+    path: "/blog",
+    element: withSuspense(Blog),
+  },
+  {
+    path: "/blog/:slug",
+    element: withSuspense(BlogPost),
+  },
 ];
