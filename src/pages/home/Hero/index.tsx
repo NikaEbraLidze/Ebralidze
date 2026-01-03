@@ -3,9 +3,11 @@ import { ProfilePhoto } from "@/assets";
 import { Typography } from "@/components/typography";
 import Button from "@/components/button";
 import { useLocalizedText } from "@/utils/hooks/useLocalizedText";
+import { useScrollToSection } from "./container";
 
 export const Hero = () => {
   const t = useLocalizedText("home.heroSection");
+  const scrollToSection = useScrollToSection();
 
   return (
     <section className={styles.heroSection} id="hero">
@@ -33,12 +35,14 @@ export const Hero = () => {
             label={t("cta.primary")}
             containerClassName={styles.ctaButton}
             labelClassName={styles.primaryButtonLabel}
+            onClick={() => scrollToSection("contact")}
           />
           <Button
             variant="outline"
             label={t("cta.secondary")}
             containerClassName={styles.ctaButton}
             labelClassName={styles.secondaryButtonLabel}
+            onClick={() => scrollToSection("my-work")}
           />
         </div>
       </div>
