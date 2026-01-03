@@ -105,16 +105,19 @@ export const Header = () => {
             label={t("nav.home")}
             variant="text"
             labelClassName={styles.navItem}
+            onClick={handleLogoClick}
           />
           <Button
-            label={t("nav.about")}
+            label={t("nav.blog")}
             variant="text"
             labelClassName={styles.navItem}
+            onClick={handleBlogClick}
           />
           <Button
             label={t("nav.contact")}
             variant="text"
             labelClassName={styles.navItem}
+            onClick={() => handleSectionClick("contact")}
           />
           <Button
             onClick={toggleTheme}
