@@ -7,6 +7,7 @@ import { MyService } from "./MyService";
 import { ContactMe } from "./Contact";
 import { PortfolioHelmet } from "@/seo";
 
+//main page
 const Home = () => {
   const { theme } = useTheme();
 
