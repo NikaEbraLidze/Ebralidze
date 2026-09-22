@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Personal reference files (not for the repo)
+/master-profile.md
+.claude/master-profile.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
