@@ -1,26 +1,29 @@
 ---
 version: alpha
 name: Ebralidze-portfolio-design
-description: A personal developer-portfolio system, light-mode only, built on a teal accent (#17b8a6) over a warm-neutral ink-on-white palette, and an em-based type/spacing scale. Design principles are synthesized from Apple, Linear, Stripe, and Vercel (see .claude/design-references/): one disciplined accent color used sparingly, quiet ink tones rather than pure black, negative tracking on display type, hairline borders over heavy shadows, and generous section rhythm.
+description: A personal developer-portfolio system, light-mode only, built on a monochrome-first white/near-black base with a single Nike-style red accent (#E10600) reserved for sparse interruptions, and an em-based type/spacing scale. Design principles are synthesized from Apple, Linear, Stripe, and Vercel (see .claude/design-references/), with a black/white/red accent rule inspired by Nike’s high-contrast brand discipline: one punch color used sparingly, quiet ink tones rather than pure black, negative tracking on display type, hairline borders over heavy shadows, and generous section rhythm.
 
 colors:
-  accent: "#17b8a6"
-  accent-hover: "#14a796"
-  accent-active: "#119485"
-  accent-muted: "#17b8a6cc"
-  accent-disabled: "#17b8a680"
-  accent-focus: "#17b8a64d"
+  accent: "#e10600"
+  accent-hover: "#b80500"
+  accent-active: "#8f0400"
+  accent-muted: "#fce8e6"
+  accent-disabled: "#e1060080"
+  accent-focus: "#e106004d"
+  text-on-accent: "#ffffff"
   bg-primary: "#ffffff"
-  bg-surface: "#fafafa"
-  card-bg: "#f5f5f5"
-  ink: "#111111"
-  ink-secondary: "#111111cc"
+  bg-surface: "#f4f4f1"
+  card-bg: "#f4f4f1"
+  ink: "#0a0a0a"
+  ink-secondary: "#242424"
   ink-muted: "#6b6b6b"
-  link: "#0fa395"
-  link-hover: "#17b8a6"
-  link-active: "#0c8f83"
-  link-visited: "#0d7f75"
-  border-default: "#e0e0e0"
+  link: "#242424"
+  link-hover: "#e10600"
+  link-active: "#0a0a0a"
+  link-visited: "#6b6b6b"
+  border-default: "#dcdcdc"
+  status-available: "#16a34a"
+  status-available-muted: "#dcfce7"
   error: "#e53935"
 
 typography:
@@ -56,18 +59,18 @@ rounded:
 
 ## Overview
 
-This is a personal developer-portfolio site (React 19 + TypeScript + Vite), not a SaaS marketing surface — the design system stays intentionally lighter than the brand systems it draws from. **The site is light-mode only.** Dark mode has been dropped as a design direction: one considered palette, applied consistently, reads more deliberate than a toggle that has to work everywhere. The system keeps a single teal accent (`#17b8a6`) over a warm-neutral, ink-on-white base, and em-based type/spacing scales that proportionally resize with a root font-size change.
+This is a personal developer-portfolio site (React 19 + TypeScript + Vite), not a SaaS marketing surface — the design system stays intentionally lighter than the brand systems it draws from. **The site is light-mode only.** Dark mode has been dropped as a design direction: one considered palette, applied consistently, reads more deliberate than a toggle that has to work everywhere. The system is monochrome-first — a white canvas and near-black ink carry the vast majority of the UI — with a single Nike-style red accent (`#E10600`) reserved for sparse, deliberate interruptions (a CTA, a hover flash, a status dot), and em-based type/spacing scales that proportionally resize with a root font-size change.
 
-This document borrows the *discipline* of four references analyzed in `.claude/design-references/` — Apple, Linear, Stripe, Vercel — and applies it to a light-only palette.
+This document borrows the *discipline* of four references analyzed in `.claude/design-references/` — Apple, Linear, Stripe, Vercel — and applies it to a light-only black/white/red palette (Nike’s high-contrast rule: black, white, and one red punch — no purple gradients, no decorative mesh).
 
 **What's being borrowed, and from where:**
-- **One accent, used sparingly** (Apple, Linear) — `{colors.accent}` should read as the single "click me" signal: CTAs, links, focus rings, the active nav state. It should not appear as a body-text color or a decorative fill.
-- **Quiet ink over pure black** (Apple, Stripe) — Apple never uses `#000000` for text (`#1d1d1f`); Stripe uses a navy ink (`#0d253d`). This system uses `{colors.ink}` (`#111111`) as its text color, not pure black — the one deliberate softening applied on top of the site's original light-theme tokens.
+- **One accent, used sparingly** (Apple, Linear, Nike) — `{colors.accent}` should read as the single "click me" signal: CTAs, links, focus rings, the active nav underline. It should not appear as a body-text color or a decorative fill. Think roughly 60/30/10: white canvas dominant, black/dark-gray ink for the bulk of text and occasional strong-contrast sections, red reserved for small, deliberate interruptions — never a large fill, never "accent everywhere."
+- **Quiet ink over pure black** (Apple, Stripe) — Apple never uses `#000000` for text (`#1d1d1f`); Stripe uses a navy ink (`#0d253d`). This system uses `{colors.ink}` (`#0a0a0a`) as its text color, not pure black — the one deliberate softening applied on top of the site's original light-theme tokens.
 - **Negative tracking on display type** (all four references) — headlines at `h2` size and above use `--letter-spacing-tight` (-0.02em); this project's `Typography` component already supports `as`/size props, so this is a per-usage choice, not a new token.
 - **Hairline borders over heavy shadows** (Linear, Apple) — `{colors.border-default}` at 1px is the primary depth signal; reserve shadows (if introduced) for a single deliberate use, not general card elevation.
 - **Section rhythm, not gradient decoration** — `--gap-section` (120px) already gives pages Apple-tile-like breathing room between sections. No gradient mesh has been introduced; the existing flat-color, high-whitespace approach reads closer to Apple/Linear than Stripe/Vercel's mesh-hero style, and should stay that way for a personal portfolio (a mesh gradient is a product-marketing device, not a portfolio one).
 
-> **Migration note:** the codebase still contains dark-theme infrastructure (`src/styles/theme/dark.css`, `ThemeProvider`/`themeContext.tsx`, the header's theme toggle). This document specifies the *target* design direction; removing that code is a separate implementation step, not yet done.
+> **Migration note:** the codebase still contains dark-theme infrastructure (`src/styles/theme/dark.css`, `ThemeProvider`/`themeContext.tsx`). This document specifies the *target* design direction; removing that code is a separate implementation step. The header no longer exposes a theme toggle.
 
 ## Colors
 
@@ -75,21 +78,24 @@ Light-only, flat palette — no `[data-theme]` branching. Values below are the c
 
 | Token | Value | Use |
 |---|---|---|
-| `{colors.accent}` | `#17b8a6` | The one interactive color — CTAs, active links, focus rings, input focus borders. No second accent hue. |
-| `{colors.accent-hover}` | `#14a796` | Hover state for accent-colored buttons/links. |
-| `{colors.accent-active}` | `#119485` | Pressed/active state. |
-| `{colors.accent-muted}` | `#17b8a6cc` (80% alpha) | Secondary accent usage — muted icons, subtle highlights. |
-| `{colors.accent-disabled}` | `#17b8a680` (50% alpha) | Disabled buttons/inputs. |
-| `{colors.accent-focus}` | `#17b8a64d` (30% alpha) | Focus ring / outline glow. |
-| `{colors.bg-primary}` | `#ffffff` | Base page canvas. |
-| `{colors.bg-surface}` | `#fafafa` | Slightly lifted surface — sticky headers, subtle section breaks. |
-| `{colors.card-bg}` | `#f5f5f5` | Card/panel fill — one step darker than surface for clear card separation without a shadow. |
-| `{colors.ink}` | `#111111` | Primary text — a quiet near-black, not `#000000`. |
-| `{colors.ink-secondary}` | `#111111cc` (80% alpha) | Secondary body copy, subheadings. |
+| `{colors.accent}` | `#e10600` | The one interactive color — CTAs, active links, focus rings, input focus borders. No second accent hue. Used sparingly: small details, a single CTA, a status dot, a hover state — never a large fill. |
+| `{colors.accent-hover}` | `#b80500` | Hover state for accent-colored buttons/links. |
+| `{colors.accent-active}` | `#8f0400` | Pressed/active state. |
+| `{colors.accent-muted}` | `#fce8e6` | Soft accent highlight — muted badges, subtle emphasis backgrounds. |
+| `{colors.accent-disabled}` | `#e1060080` (50% alpha) | Disabled buttons/inputs. |
+| `{colors.accent-focus}` | `#e106004d` (30% alpha) | Focus ring / outline glow. |
+| `{colors.text-on-accent}` | `#ffffff` | Label/icon color on filled red CTAs. |
+| `{colors.bg-primary}` | `#ffffff` | Base page canvas — the dominant surface. |
+| `{colors.bg-surface}` | `#f4f4f1` | Alt section background — subtle warm-off-white break from the canvas. |
+| `{colors.card-bg}` | `#f4f4f1` | Card/panel fill — same alt tone as surface, for clear card separation off the white canvas without a shadow. |
+| `{colors.ink}` | `#0a0a0a` | Primary text — a quiet near-black, not `#000000`. |
+| `{colors.ink-secondary}` | `#242424` | Secondary body copy, subheadings. |
 | `{colors.ink-muted}` | `#6b6b6b` | Captions, helper text, disabled labels. |
-| `{colors.link}` / `{colors.link-hover}` / `{colors.link-active}` / `{colors.link-visited}` | `#0fa395` → `#17b8a6` → `#0c8f83` → `#0d7f75` | A 4-state ladder distinct from button accent states — use this ladder for any inline link, don't reach for the button tokens. |
-| `{colors.border-default}` | `#e0e0e0` | 1px hairline border — the system's primary depth signal. |
-| `{colors.error}` | `#e53935` | The only semantic color — input validation only. |
+| `{colors.link}` / `{colors.link-hover}` / `{colors.link-active}` / `{colors.link-visited}` | `#242424` → `#e10600` → `#0a0a0a` → `#6b6b6b` | A 4-state ladder distinct from button accent states — neutral ink by default, the red accent flashes only on hover as a deliberate interruption, never the resting link color. |
+| `{colors.border-default}` | `#dcdcdc` | 1px hairline border — the system's primary depth signal. |
+| `{colors.status-available}` | `#16a34a` | Semantic “available / live” indicator only (header + hero badge dots). Not a second brand accent. |
+| `{colors.status-available-muted}` | `#dcfce7` | Soft wash behind the available badge. |
+| `{colors.error}` | `#e53935` | The only semantic error color — input validation only. |
 
 ## Typography
 
@@ -129,15 +135,17 @@ Font stack: system-ui first (`system-ui, -apple-system, "Segoe UI", sans-serif`)
 ## Do's and Don'ts
 
 ### Do
-- Keep `{colors.accent}` (#17b8a6) as the only interactive color across the whole site.
-- Use `{colors.ink}` (#111111), not `#000000`, for primary text.
+- Keep `{colors.accent}` (#e10600) as the only interactive color across the whole site, and use it sparingly — small details, a single CTA, a status dot, a hover state.
+- Use `{colors.ink}` (#0a0a0a), not `#000000`, for primary text.
+- Use `{colors.text-on-accent}` (white) for labels on filled red CTAs.
 - Reuse the existing em-based type/spacing scales (`variables.css`, `spacing.css`) instead of introducing new hardcoded values.
 - Apply negative letter-spacing (`h2`/32px and above) for the "tight" display feel the reference systems share.
 - Lean on hairline borders (`{colors.border-default}`) for card/section separation before reaching for shadows.
 - Preserve the generous `--gap-section` rhythm between page sections.
 
 ### Don't
-- Don't add a second accent color or a decorative gradient mesh — that's a SaaS-marketing device (Stripe/Vercel), not a portfolio one.
+- Don't add a second accent color or a decorative gradient mesh — that's a SaaS-marketing device (Stripe/Vercel), not a portfolio one. No purple gradients.
+- Don't let the red accent become a dominant fill (large backgrounds, oversized blocks of "red UI") — it's a monochrome system with one sparing interruption color, not a red-branded site.
 - Don't add a dark theme, a `[data-theme]` toggle, or any dark-mode-conditional styling — the design direction is light-only.
 - Don't hardcode `#000000` for new text — use `{colors.ink}`/`{colors.ink-secondary}`/`{colors.ink-muted}`.
 - Don't apply tight letter-spacing below `h2` size — it reads as a bug on small text, not a brand signature.
