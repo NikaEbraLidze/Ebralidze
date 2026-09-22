@@ -1,6 +1,7 @@
 import styles from "./index.module.css";
-import type { ButtonProps } from "./index.types.ts";
+import type { ButtonProps } from "./index.types";
 import clsx from "clsx";
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 
 const Button = ({
   label,
@@ -14,25 +15,23 @@ const Button = ({
   labelClassName,
   leftIconClassName,
   rightIconClassName,
+  href,
   ...rest
 }: ButtonProps) => {
   const isIconOnly = variant === "icon" || (!label && leftIcon && !rightIcon);
+  const className = clsx(
+    styles.button,
+    styles[variant],
+    {
+      [styles.fullWidth]: fullWidth,
+      [styles.iconOnly]: isIconOnly,
+      [styles.disabled]: disabled,
+    },
+    containerClassName,
+  );
 
-  return (
-    <button
-      disabled={disabled || isLoading}
-      className={clsx(
-        styles.button,
-        styles[variant],
-        {
-          [styles.fullWidth]: fullWidth,
-          [styles.iconOnly]: isIconOnly,
-          [styles.disabled]: disabled,
-        },
-        containerClassName
-      )}
-      {...rest}
-    >
+  const content = (
+    <>
       {isLoading && <span className={styles.loader} />}
 
       {!isLoading && leftIcon && (
@@ -48,6 +47,39 @@ const Button = ({
           {rightIcon}
         </span>
       )}
+    </>
+  );
+
+  if (href) {
+    const linkProps = rest as Omit<
+      AnchorHTMLAttributes<HTMLAnchorElement>,
+      "className" | "href"
+    >;
+
+    return (
+      <a
+        {...linkProps}
+        href={disabled || isLoading ? undefined : href}
+        aria-disabled={disabled || isLoading || undefined}
+        className={className}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  const buttonProps = rest as Omit<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    "className"
+  >;
+
+  return (
+    <button
+      {...buttonProps}
+      disabled={disabled || isLoading}
+      className={className}
+    >
+      {content}
     </button>
   );
 };

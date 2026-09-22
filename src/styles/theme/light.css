@@ -1,38 +1,44 @@
-/* Light Theme */
-[data-theme="light"] {
+/* Light Theme (light-mode only) */
+:root {
   --color-bg-primary: #ffffff;
-  --color-bg-surface: #ffffff;
+  --color-bg-surface: #f4f4f1;
 
-  --color-card-bg: #161a20;
+  --color-card-bg: #f4f4f1;
 
-  --color-text-primary: #000000;
-  --color-text-secondary: #000000cc;
+  --color-text-primary: #0a0a0a;
+  --color-text-secondary: #242424;
+  --color-text-muted: #6b6b6b;
+  --color-text-on-accent: #ffffff;
 
-  --color-accent-primary: #17b8a6;
-  --color-accent-muted: #17b8a6cc;
+  --color-accent-primary: #e10600;
+  --color-accent-muted: #fce8e6;
 
-  --color-accent-hover: #14a796;
-  --color-accent-active: #119485;
-  --color-accent-disabled: #17b8a680;
-  --color-accent-focus: #17b8a64d;
+  --color-accent-hover: #b80500;
+  --color-accent-active: #8f0400;
+  --color-accent-disabled: #e1060080;
+  --color-accent-focus: #e106004d;
 
-  --color-link: #0fa395;
-  --color-link-hover: #17b8a6;
-  --color-link-active: #0c8f83;
-  --color-link-visited: #0d7f75;
+  --color-link: #242424;
+  --color-link-hover: #e10600;
+  --color-link-active: #0a0a0a;
+  --color-link-visited: #6b6b6b;
 
-  --color-border-default: #aeaeae;
+  --color-border-default: #dcdcdc;
 
-  --input-border: #17b8a64d;
+  /* Semantic “available / live” status — not a brand accent */
+  --color-status-available: #16a34a;
+  --color-status-available-muted: #dcfce7;
+
+  --input-border: #e106004d;
   --input-border-focus: var(--color-accent-primary);
   --input-border-filled: #aeaeae;
 
   --input-text: var(--color-text-primary);
 
-  --input-label: #999999;
+  --input-label: #6b6b6b;
   --input-label-focus: var(--color-accent-primary);
 
   --input-border-error: #e53935;
   --input-error-text: #e53935;
-  --input-helper-text: #777777;
+  --input-helper-text: #6b6b6b;
 }

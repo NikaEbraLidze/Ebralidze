@@ -1,15 +1,17 @@
 import { useState, useEffect } from "react";
 import { useLang } from "../locales/index";
-import { useTheme } from "../../utils/hooks/themeContext";
 import { useLocalizedText } from "@/utils/hooks/useLocalizedText";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { SOCIAL_LINKS } from "@/constants/social";
+import { scrollToSection } from "@/utils/scrollToSection";
+import type { NavLink } from "./index.types";
 
 export const useHeaderContainer = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { lang, setLang } = useLang();
-  const { theme, toggleTheme } = useTheme();
   const t = useLocalizedText("header");
   const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleLang = () => {
     setLang(lang === "en" ? "ka" : "en");
@@ -19,7 +21,6 @@ export const useHeaderContainer = () => {
     setMobileMenuOpen((prev) => !prev);
   };
 
-  // Close mobile menu on window resize
   useEffect(() => {
     const handleResize = () => {
       if (mobileMenuOpen) {
@@ -47,31 +48,43 @@ export const useHeaderContainer = () => {
   };
 
   const handleSectionClick = (sectionId: string) => {
-    if (window.location.pathname !== "/") {
-      navigate("/");
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) element.scrollIntoView({ behavior: "smooth" });
-      }, 100);
-    } else {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
+    scrollToSection(sectionId, navigate, location.pathname);
     setMobileMenuOpen(false);
+  };
+
+  const navLinks: NavLink[] = [
+    {
+      key: "home",
+      label: t("nav.home"),
+      onClick: handleLogoClick,
+      isActive: location.pathname === "/",
+    },
+    {
+      key: "blog",
+      label: t("nav.blog"),
+      onClick: handleBlogClick,
+      isActive: location.pathname.startsWith("/blog"),
+    },
+    {
+      key: "contact",
+      label: t("nav.contact"),
+      onClick: () => handleSectionClick("contact"),
+    },
+  ];
+
+  const socialLinks = {
+    github: SOCIAL_LINKS.github,
+    linkedin: SOCIAL_LINKS.linkedin,
   };
 
   return {
     mobileMenuOpen,
     lang,
-    theme,
     t,
+    navLinks,
+    socialLinks,
     toggleLang,
-    toggleTheme,
     toggleMobileMenu,
     handleLogoClick,
-    handleBlogClick,
-    handleSectionClick,
   };
 };

@@ -8,7 +8,7 @@ export const Footer = () => {
 
   return (
     <footer className={styles.footer}>
-      <div className={styles.footerWraper}>
+      <div className={styles.footerWrapper}>
         <div className={styles.links}>
           <div className={styles.socMedia}>
             <Button
