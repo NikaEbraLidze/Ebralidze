@@ -1,146 +1,136 @@
 import styles from "./index.module.css";
 import Button from "../button";
-import { ChevronIcon, EbralidzeLogo, MoonIcon, SunIcon } from "../../assets";
+import { Typography } from "../typography";
+import { ChevronIcon, GitHubIcon, LinkedInIcon } from "@/assets";
 import { useHeaderContainer } from "./container";
+import clsx from "clsx";
 
 export const Header = () => {
   const {
     mobileMenuOpen,
     lang,
-    theme,
     t,
+    navLinks,
+    socialLinks,
     toggleLang,
-    toggleTheme,
     toggleMobileMenu,
     handleLogoClick,
-    handleBlogClick,
-    handleSectionClick,
   } = useHeaderContainer();
+
+  const langToggle = (
+    <Button
+      onClick={toggleLang}
+      label={t(`languageToggle.${lang}`)}
+      variant="text"
+      containerClassName={styles.langBtn}
+      labelClassName={styles.langText}
+    />
+  );
+
+  const socials = (
+    <div className={styles.socials}>
+      <a
+        className={styles.socialBtn}
+        href={socialLinks.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={t("social.github")}
+      >
+        <GitHubIcon />
+      </a>
+      <a
+        className={styles.socialBtn}
+        href={socialLinks.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={t("social.linkedin")}
+      >
+        <LinkedInIcon />
+      </a>
+    </div>
+  );
+
+  const availableBadge = (
+    <div className={styles.availableBadge}>
+      <span className={styles.availableDot} aria-hidden />
+      <Typography as="span" size={13} weight="medium" className={styles.availableLabel}>
+        {t("availableBadge")}
+      </Typography>
+    </div>
+  );
 
   return (
     <header className={styles.header}>
-      <div className={`${styles.container} relative overflow-hidden`}>
-        {/* Left Section */}
+      <div className={styles.container}>
         <div className={styles.leftSection}>
           <Button
-            label={t("logo")}
             variant="text"
+            aria-label={t("logoAria")}
             leftIcon={
-              <img src={EbralidzeLogo} alt={t("themeToggle.logoAlt")} />
+              <Typography as="span" weight="bold" size={24} className={styles.logotype}>
+                N<span className={styles.logotypeSlash}>/</span>
+              </Typography>
             }
             containerClassName={styles.logoButtons}
-            labelClassName={styles.logoLabel}
             leftIconClassName={styles.logoIcon}
             onClick={handleLogoClick}
           />
         </div>
 
-        {/* Nav Section */}
-        <nav className={styles.navSection}>
-          <Button
-            label={t("nav.home")}
-            variant="text"
-            labelClassName={styles.navItem}
-            onClick={handleLogoClick}
-          />
-          <Button
-            label={t("nav.blog")}
-            variant="text"
-            labelClassName={styles.navItem}
-            onClick={handleBlogClick}
-          />
-          <Button
-            label={t("nav.contact")}
-            variant="text"
-            labelClassName={styles.navItem}
-            onClick={() => handleSectionClick("contact")}
-          />
+        <nav className={styles.navSection} aria-label={t("navAria")}>
+          {navLinks.map((navLink) => (
+            <Button
+              key={navLink.key}
+              label={navLink.label}
+              variant="text"
+              labelClassName={clsx(styles.navItem, navLink.isActive && styles.navItemActive)}
+              onClick={navLink.onClick}
+            />
+          ))}
         </nav>
 
-        {/* Right Section */}
         <div className={styles.rightSection}>
-          <Button
-            onClick={toggleTheme}
-            variant="icon"
-            leftIcon={
-              theme === "dark" ? (
-                <img src={SunIcon} alt={t("themeToggle.lightAlt")} />
-              ) : (
-                <img src={MoonIcon} alt={t("themeToggle.darkAlt")} />
-              )
-            }
-            leftIconClassName={styles.themeIcon}
-          />
-
-          <Button
-            onClick={toggleLang}
-            label={t(`languageToggle.${lang}`)}
-            leftIcon="🌍"
-            variant="text"
-            labelClassName={styles.langText}
-          />
+          {availableBadge}
+          {socials}
+          {langToggle}
         </div>
 
-        {/* Burger Menu */}
-        <div className={styles.burger}>
-          <Button
-            onClick={toggleMobileMenu}
-            label={t("mobileMenu")}
-            variant="text"
-            labelClassName={styles.more}
-            rightIcon={<ChevronIcon />}
-            rightIconClassName={`${styles.chevronIcon} ${
-              mobileMenuOpen ? styles.chevronOpen : ""
-            }`}
-          />
-        </div>
-
-        {/* Mobile Menu */}
-        <div
-          className={`${styles.mobileMenu} ${
-            mobileMenuOpen ? styles.menuVisible : ""
-          }`}
-        >
-          <Button
-            label={t("nav.home")}
-            variant="text"
-            labelClassName={styles.navItem}
-            onClick={handleLogoClick}
-          />
-          <Button
-            label={t("nav.blog")}
-            variant="text"
-            labelClassName={styles.navItem}
-            onClick={handleBlogClick}
-          />
-          <Button
-            label={t("nav.contact")}
-            variant="text"
-            labelClassName={styles.navItem}
-            onClick={() => handleSectionClick("contact")}
-          />
-          <Button
-            onClick={toggleTheme}
-            variant="icon"
-            leftIcon={
-              theme === "dark" ? (
-                <img src={SunIcon} alt={t("themeToggle.lightAlt")} />
-              ) : (
-                <img src={MoonIcon} alt={t("themeToggle.darkAlt")} />
-              )
-            }
-            leftIconClassName={styles.themeIcon}
-          />
-
-          <Button
-            onClick={toggleLang}
-            label={t(`languageToggle.${lang}`)}
-            leftIcon="🌍"
-            variant="text"
-            labelClassName={styles.langText}
-          />
+        <div className={styles.burgerGroup}>
+          <div className={styles.availableBadgeMobile}>{availableBadge}</div>
+          <div className={styles.burger}>
+            <Button
+              onClick={toggleMobileMenu}
+              label={t("mobileMenu")}
+              variant="text"
+              labelClassName={styles.more}
+              rightIcon={<ChevronIcon />}
+              rightIconClassName={clsx(
+                styles.chevronIcon,
+                mobileMenuOpen && styles.chevronOpen,
+              )}
+              aria-expanded={mobileMenuOpen}
+            />
+          </div>
         </div>
       </div>
+
+      {mobileMenuOpen && (
+        <div className={clsx(styles.mobileMenu, styles.menuVisible)}>
+          <div className={styles.mobileMenuInner}>
+            {navLinks.map((navLink) => (
+              <Button
+                key={navLink.key}
+                label={navLink.label}
+                variant="text"
+                labelClassName={clsx(styles.navItem, navLink.isActive && styles.navItemActive)}
+                onClick={navLink.onClick}
+              />
+            ))}
+            {socials}
+            {langToggle}
+          </div>
+        </div>
+      )}
     </header>
   );
 };

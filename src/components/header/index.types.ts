@@ -1,8 +1,6 @@
 export interface NavLink {
+  key: string;
   label: string;
-  href?: string;
-}
-
-export interface StackItem {
-  label: string;
+  onClick: () => void;
+  isActive?: boolean;
 }
