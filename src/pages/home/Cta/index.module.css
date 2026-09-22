@@ -1,0 +1,115 @@
+.section {
+  align-self: stretch;
+  box-sizing: border-box;
+  width: 100%;
+  background: var(--color-bg-primary);
+  padding: 0;
+}
+
+.inner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--max-width-md);
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl);
+  width: 100%;
+  padding: var(--spacing-xxxl) var(--spacing-xlg);
+  text-align: center;
+  background: var(--color-text-primary);
+  border-radius: var(--radius-2xl);
+  animation: sectionFadeUp 0.45s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.heading {
+  margin: 0;
+  color: var(--color-bg-primary);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
+}
+
+.accentMark {
+  color: var(--color-accent-primary);
+}
+
+.description {
+  margin: 0;
+  max-width: 36em;
+  color: color-mix(in srgb, var(--color-bg-primary) 70%, transparent);
+  line-height: var(--line-height-relaxed);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-s);
+}
+
+.emailBtn {
+  padding: var(--spacing-m) var(--spacing-xl);
+  border-radius: var(--radius-md);
+  word-break: break-all;
+}
+
+.socials {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-m);
+}
+
+.socialLink {
+  color: color-mix(in srgb, var(--color-bg-primary) 75%, transparent);
+  padding: 0;
+}
+
+.socialLink:hover {
+  color: var(--color-accent-primary);
+}
+
+.socialLinkLabel {
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-medium);
+  color: inherit;
+}
+
+.socialDot {
+  color: color-mix(in srgb, var(--color-bg-primary) 40%, transparent);
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: var(--spacing-xxl) var(--spacing-xl);
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: var(--spacing-ml);
+  }
+}
+
+@keyframes sectionFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(0.5em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: none;
+  }
+}

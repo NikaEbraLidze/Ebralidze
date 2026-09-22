@@ -1,20 +1,10 @@
 import { useNavigate } from "react-router-dom";
+import { scrollToSection } from "@/utils/scrollToSection";
 
 export const useScrollToSection = () => {
   const navigate = useNavigate();
 
-  const scrollToSection = (sectionId: string) => {
-    if (window.location.pathname !== "/") {
-      navigate("/");
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) element.scrollIntoView({ behavior: "smooth" });
-      }, 100);
-    } else {
-      const element = document.getElementById(sectionId);
-      if (element) element.scrollIntoView({ behavior: "smooth" });
-    }
+  return (sectionId: string) => {
+    scrollToSection(sectionId, navigate);
   };
-
-  return scrollToSection;
 };

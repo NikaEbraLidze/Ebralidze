@@ -1,92 +1,288 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-xlg);
+.section {
+  align-self: stretch;
+  box-sizing: border-box;
   width: 100%;
-  max-width: var(--max-width-sm);
+  background: var(--color-bg-primary);
+  padding: 0;
 }
 
-.projectsGrid {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xl);
+.inner {
+  box-sizing: border-box;
   width: 100%;
-}
-
-.projectCard {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap-reverse;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--spacing-xl);
-}
-
-.content {
+  max-width: var(--max-width-md);
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--spacing-ml);
-  flex: 1;
-  min-width: 18.75em;
+  gap: var(--spacing-xxl);
 }
 
 .header {
   display: flex;
-  flex-direction: row;
+  align-items: baseline;
   justify-content: space-between;
-  width: 100%;
+  gap: var(--spacing-xl);
+}
+
+.seeAll {
+  display: inline-flex;
   align-items: center;
+  gap: var(--spacing-xs);
+  text-decoration: none;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
 }
 
-.sourceLink {
-  text-decoration: underline;
-  color: var(--color-link);
-  cursor: pointer;
-  font-weight: 500;
+.seeAll:hover {
+  color: var(--color-accent-primary);
 }
 
-.sourceLink:hover {
-  color: var(--color-link-hover);
+.seeAll:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 var(--spacing-xxs) var(--color-accent-focus);
+  border-radius: var(--radius-xs);
 }
 
-.sourceLink:active {
-  color: var(--color-link-active);
+.seeAllHint {
+  color: var(--color-accent-primary);
+  font-size: var(--font-size-14);
 }
 
-.techStack {
+.heading {
+  color: var(--color-text-primary);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.accentMark {
+  color: var(--color-accent-primary);
+}
+
+.bento {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(9em, auto));
+  gap: var(--spacing-m);
+}
+
+.tile {
+  box-sizing: border-box;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--spacing-m);
+  min-width: 0;
+  min-height: 0;
+  padding: var(--spacing-xl);
+  text-decoration: none;
+  color: inherit;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-2xl);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  animation: sectionFadeUp 0.45s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.tile:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.tile:nth-child(2) {
+  animation-delay: 60ms;
+}
+
+.tile:nth-child(3) {
+  animation-delay: 120ms;
+}
+
+.tile:nth-child(4) {
+  animation-delay: 180ms;
+}
+
+.tile:nth-child(5) {
+  animation-delay: 240ms;
+}
+
+.tile:hover {
+  border-color: color-mix(in srgb, var(--color-accent-primary) 45%, var(--color-border-default));
+  background: color-mix(in srgb, var(--color-bg-surface) 88%, var(--color-accent-muted));
+}
+
+.tile:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 var(--spacing-xxs) var(--color-accent-focus);
+}
+
+.spanHero {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.spanTall {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+}
+
+.spanSquare {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.tileBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+  min-width: 0;
+  flex: 1;
+}
+
+.tileHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xxs);
+  min-width: 0;
+}
+
+.title {
+  display: inline-flex;
   align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-text-primary);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.externalHint {
+  color: var(--color-accent-primary);
+  font-size: var(--font-size-14);
+}
+
+.tagline {
+  color: var(--color-text-muted);
+}
+
+.description {
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  max-width: 36em;
+}
+
+.highlights {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
   gap: var(--spacing-s);
 }
 
-.techIcon {
-  width: 1.5em;
-  height: 1.5em;
-  object-fit: contain;
+.highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-s);
 }
 
-.imageContainer {
-  width: 15.75em;
-  height: 10.5em;
-  border-radius: var(--radius-base);
-  overflow: hidden;
+.dot {
+  width: 0.35em;
+  height: 0.35em;
+  margin-top: 0.5em;
+  border-radius: 50%;
+  background: var(--color-accent-primary);
   flex-shrink: 0;
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-  display: block;
 }
 
-.imageContainer:hover {
-  opacity: 0.9;
+.highlightText {
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
 }
 
-.projectImage {
+.mediaSlot {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--color-border-default);
+  background: var(--color-bg-primary);
+  flex-shrink: 0;
+}
+
+.spanHero .mediaSlot {
+  max-width: 22em;
+}
+
+.spanTall .mediaSlot {
+  aspect-ratio: 1 / 1;
+  max-width: 8em;
+  margin-top: auto;
+}
+
+.spanSquare .mediaSlot {
+  aspect-ratio: 16 / 9;
+}
+
+.media {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+.mediaMark {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-primary);
+}
+
+.mark {
+  color: var(--color-accent-primary);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-s);
+  }
+
+  .bento {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .spanHero,
+  .spanTall,
+  .spanSquare {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .spanHero .mediaSlot,
+  .spanTall .mediaSlot {
+    max-width: none;
+    aspect-ratio: 16 / 9;
+  }
+
+  .tile {
+    padding: var(--spacing-xl);
+    min-height: 12em;
+  }
+}
+
+@keyframes sectionFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(0.5em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile {
+    animation: none;
+  }
 }
