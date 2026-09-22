@@ -48,7 +48,7 @@ export const PortfolioHelmet = () => {
       /> */}
 
       {/* Theme color (browser & mobile) */}
-      <meta name="theme-color" content="#17b8a6" />
+      <meta name="theme-color" content="#E10600" />
     </Helmet>
   );
 };
