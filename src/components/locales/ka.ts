@@ -95,11 +95,11 @@ const ka = {
           title: "F1 AeroLab",
           tagline: "სრულფასოვანი აეროდინამიკის სიმულატორი",
           description:
-            "საგანმანათლებლო პლატფორმა, სადაც F1 მანქანის პარამეტრებს აყენებ და აეროდინამიკური ძალები ცოცხლად ახლდება WebSocket-ით, გრაფიკებით სიჩქარის სრულ დიაპაზონზე.",
+            "შეცვალე ფრთის კუთხე, სიმაღლე და საბურავის ნაერთი ვირტუალურ F1 მანქანაზე — downforce, drag და ბალანსი ცოცხლად ითვლება WebSocket-ით, ხოლო Recharts გრაფიკები სიჩქარის სრულ დიაპაზონზე გიჩვენებს, როგორ იცვლება grip და ეფექტურობა ყოველ setup-ზე.",
           imageAlt: "F1 AeroLab პროექტის ნიშანი",
           highlights: [
-            "Next.js ფრონტი Zustand-ით, Socket.io-თი და ცოცხალი Recharts გრაფიკებით",
-            "NestJS ბექენდი: REST + WebSocket სიმულაცია, Prisma და Swagger",
+            "Next.js UI Zustand-ით, Socket.io სტრიმებით და ცოცხალი Recharts გრაფიკებით",
+            "NestJS სიმულაციის API: REST + WebSocket, Prisma და Swagger",
             "Preset CRUD, EN/KA i18n და SEO Learn/Build გვერდებზე",
           ],
         },

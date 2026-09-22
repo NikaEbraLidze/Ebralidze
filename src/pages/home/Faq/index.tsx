@@ -54,7 +54,8 @@ export const Faq = () => {
                   id={panelId}
                   role="region"
                   aria-labelledby={buttonId}
-                  hidden={!isOpen}
+                  aria-hidden={!isOpen}
+                  inert={!isOpen}
                   className={clsx(styles.answerPanel, isOpen && styles.answerPanelOpen)}
                 >
                   <div className={styles.answerInner}>

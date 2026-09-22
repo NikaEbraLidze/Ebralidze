@@ -28,8 +28,8 @@ const ProjectTile = ({
   imageAlt: string;
   highlights: string[];
 }) => {
-  const showDescription = item.span === "hero";
-  const highlightLimit = item.span === "hero" ? 2 : item.span === "tall" ? 1 : 0;
+  const showDescription = item.span === "hero" || item.span === "tall";
+  const highlightLimit = item.span === "hero" || item.span === "tall" ? 2 : 0;
   const visibleHighlights = highlights.slice(0, highlightLimit);
 
   return (

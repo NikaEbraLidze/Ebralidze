@@ -45,6 +45,22 @@
   animation: availableFlick 1.8s ease-in-out infinite;
 }
 
+@keyframes availableFlick {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-status-available) 45%, transparent);
+  }
+  45% {
+    opacity: 0.35;
+    box-shadow: 0 0 0 0.45em color-mix(in srgb, var(--color-status-available) 0%, transparent);
+  }
+  55% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-status-available) 35%, transparent);
+  }
+}
+
 .badgeLabel {
   color: var(--color-text-primary);
 }
@@ -118,6 +134,13 @@
   overflow: hidden;
   border-radius: var(--radius-2xl);
   background: var(--color-bg-primary);
+  cursor: pointer;
+}
+
+.tileStack *,
+.tilePortrait *,
+.tileStat * {
+  cursor: pointer;
 }
 
 .tileStack {
@@ -197,6 +220,23 @@
   gap: var(--spacing-xxs);
   padding: var(--spacing-m) var(--spacing-xl);
   background: var(--color-text-primary);
+  overflow: visible;
+  border: 1px solid transparent;
+  outline: 1px solid transparent;
+  outline-offset: 0;
+  box-shadow: none;
+  transition:
+    transform 0.25s cubic-bezier(0.23, 1, 0.32, 1),
+    border-color 0.25s ease,
+    outline-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.tileStat:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--color-accent-primary) 55%, transparent);
+  outline-color: color-mix(in srgb, var(--color-accent-primary) 35%, transparent);
+  box-shadow: 0 0.5em 1.25em color-mix(in srgb, var(--color-accent-primary) 28%, transparent);
 }
 
 .portraitImage {
@@ -222,6 +262,13 @@
 
 .statAccent {
   color: var(--color-accent-primary);
+  transition: text-shadow 0.25s ease;
+}
+
+.tileStat:hover .statAccent {
+  text-shadow:
+    0 0 0.5em color-mix(in srgb, var(--color-accent-primary) 70%, transparent),
+    0 0 1em color-mix(in srgb, var(--color-accent-primary) 40%, transparent);
 }
 
 .statLabel {
@@ -262,6 +309,25 @@
 
   .tilePortrait:hover .portraitImage {
     transform: none;
+  }
+
+  .tileStat {
+    transition: none;
+  }
+
+  .tileStat:hover {
+    transform: none;
+    border-color: transparent;
+    outline-color: transparent;
+    box-shadow: none;
+  }
+
+  .statAccent {
+    transition: none;
+  }
+
+  .tileStat:hover .statAccent {
+    text-shadow: none;
   }
 }
 

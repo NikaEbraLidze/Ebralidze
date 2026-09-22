@@ -95,11 +95,11 @@ const en = {
           title: "F1 AeroLab",
           tagline: "Full-stack aerodynamics simulator",
           description:
-            "Educational platform where you tune F1 car parameters and watch aerodynamic forces update live over WebSocket, with charts across a full speed range.",
+            "Tune wing angle, ride height, and tire compound on a virtual F1 car, then watch downforce, drag, and balance recalculate live over WebSocket: with Recharts plots across the full speed range so you can see how each setup choice trades grip for efficiency.",
           imageAlt: "F1 AeroLab project mark",
           highlights: [
-            "Next.js frontend with Zustand, Socket.io, and live Recharts graphs",
-            "NestJS backend: REST + WebSocket simulation, Prisma, and Swagger docs",
+            "Next.js UI with Zustand state, Socket.io streams, and live Recharts graphs",
+            "NestJS simulation API: REST + WebSocket, Prisma persistence, Swagger docs",
             "Preset CRUD, EN/KA i18n, and SEO across Learn and Build pages",
           ],
         },

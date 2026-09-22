@@ -44,6 +44,7 @@ select {
 a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
 button {
@@ -59,22 +60,6 @@ ol {
 
 :root {
   font-size: 16px; /* base font size */
-}
-
-@keyframes availableFlick {
-  0%,
-  100% {
-    opacity: 1;
-    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-status-available) 45%, transparent);
-  }
-  45% {
-    opacity: 0.35;
-    box-shadow: 0 0 0 0.45em color-mix(in srgb, var(--color-status-available) 0%, transparent);
-  }
-  55% {
-    opacity: 1;
-    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-status-available) 35%, transparent);
-  }
 }
 
 /* Scale down root font-size on smaller screens for proportional scaling */
