@@ -12,6 +12,11 @@ const BlogPost = lazy(() =>
     default: module.BlogPostContainer,
   }))
 );
+const Contact = lazy(() =>
+  import("@/pages/contact/container").then((module) => ({
+    default: module.ContactContainer,
+  }))
+);
 
 const Loading = () => (
   <div
@@ -44,5 +49,9 @@ export const routeConfig: RouteConfig[] = [
   {
     path: "/blog/:slug",
     element: withSuspense(BlogPost),
+  },
+  {
+    path: "/contact",
+    element: withSuspense(Contact),
   },
 ];

@@ -1,0 +1,269 @@
+.page {
+  align-self: stretch;
+  box-sizing: border-box;
+  width: 100%;
+  background: var(--color-bg-surface);
+  padding: var(--spacing-xxxl) 0;
+}
+
+.inner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--max-width-md);
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.bento {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr 0.95fr;
+  grid-template-rows: auto auto auto auto;
+  gap: var(--spacing-m);
+  animation: contactFadeUp 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.tile {
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: var(--radius-2xl);
+  background: var(--color-bg-primary);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+  min-width: 0;
+  animation: contactFadeUp 0.45s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.tileDark {
+  background: var(--color-text-primary);
+}
+
+.tileIntro {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  gap: var(--spacing-m);
+  animation-delay: 40ms;
+}
+
+.tileEmail {
+  grid-column: 3;
+  grid-row: 1;
+  justify-content: space-between;
+  animation-delay: 80ms;
+}
+
+.tileLocation {
+  grid-column: 1;
+  grid-row: 2;
+  animation-delay: 120ms;
+}
+
+.tileStatYears {
+  grid-column: 2;
+  grid-row: 2;
+  justify-content: center;
+  gap: var(--spacing-xxs);
+  animation-delay: 160ms;
+}
+
+.tileStatRoles {
+  grid-column: 3;
+  grid-row: 2;
+  justify-content: center;
+  gap: var(--spacing-xxs);
+  animation-delay: 200ms;
+}
+
+.tileSocial {
+  grid-column: 1;
+  grid-row: 3;
+  justify-content: space-between;
+  animation-delay: 240ms;
+}
+
+.tileFaq {
+  grid-column: 2 / 4;
+  grid-row: 3 / 5;
+  animation-delay: 280ms;
+}
+
+.heading {
+  margin: 0;
+  color: var(--color-text-primary);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
+}
+
+.accentMark {
+  color: var(--color-accent-primary);
+}
+
+.description {
+  margin: 0;
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  max-width: 36em;
+}
+
+.availabilitySecondary {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.tileLabel {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.tileLabelOnDark {
+  color: color-mix(in srgb, var(--color-bg-primary) 65%, transparent);
+}
+
+.tileValue {
+  margin: 0;
+  color: var(--color-text-primary);
+  line-height: var(--line-height-tight);
+}
+
+.tileValueOnDark {
+  color: var(--color-bg-primary);
+}
+
+.timezone {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.statValue {
+  margin: 0;
+  color: var(--color-bg-primary);
+  font-size: var(--font-size-32);
+  line-height: 1;
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.statValueLight {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-24);
+}
+
+.statAccent {
+  color: var(--color-accent-primary);
+}
+
+.statLabel {
+  margin: 0;
+  color: color-mix(in srgb, var(--color-bg-primary) 70%, transparent);
+  line-height: 1.25;
+}
+
+.statLabelLight {
+  color: var(--color-text-secondary);
+}
+
+.emailBtn {
+  padding: var(--spacing-m) var(--spacing-xl);
+  border-radius: var(--radius-md);
+  word-break: break-all;
+  align-self: flex-start;
+}
+
+.faqHeading {
+  margin: 0;
+  color: var(--color-text-primary);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.faqList {
+  margin-top: var(--spacing-xs);
+}
+
+@keyframes contactFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(0.75em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bento,
+  .tile {
+    animation: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .bento {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+  }
+
+  .tileIntro {
+    grid-column: 1 / 3;
+    grid-row: auto;
+  }
+
+  .tileEmail {
+    grid-column: 1 / 3;
+    grid-row: auto;
+  }
+
+  .tileLocation {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .tileStatYears {
+    grid-column: 2;
+    grid-row: auto;
+  }
+
+  .tileStatRoles {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .tileSocial {
+    grid-column: 2;
+    grid-row: auto;
+  }
+
+  .tileFaq {
+    grid-column: 1 / 3;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .page {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .bento {
+    grid-template-columns: 1fr;
+  }
+
+  .tileIntro,
+  .tileEmail,
+  .tileLocation,
+  .tileStatYears,
+  .tileStatRoles,
+  .tileSocial,
+  .tileFaq {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .tileEmail {
+    order: -1;
+  }
+}

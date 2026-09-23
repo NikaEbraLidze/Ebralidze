@@ -48,11 +48,20 @@
 
 .actions {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: var(--spacing-xl);
   margin-top: var(--spacing-s);
+}
+
+.ctaButtons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-m);
 }
 
 .emailBtn {
@@ -61,15 +70,21 @@
   word-break: break-all;
 }
 
-.socials {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-m);
+.contactBtn {
+  padding: var(--spacing-m) var(--spacing-xl);
+  border-radius: var(--radius-md);
+  border-color: color-mix(in srgb, var(--color-bg-primary) 45%, transparent);
+  color: var(--color-bg-primary);
+}
+
+.contactBtn:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--color-bg-primary) 12%, transparent);
+  border-color: var(--color-accent-primary);
+  color: var(--color-accent-primary);
 }
 
 .socialLink {
   color: color-mix(in srgb, var(--color-bg-primary) 75%, transparent);
-  padding: 0;
 }
 
 .socialLink:hover {

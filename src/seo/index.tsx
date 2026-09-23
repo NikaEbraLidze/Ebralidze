@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { useLocalizedText } from "@/utils/hooks/useLocalizedText";
 
 export const PortfolioHelmet = () => {
   return (
@@ -48,6 +49,35 @@ export const PortfolioHelmet = () => {
       /> */}
 
       {/* Theme color (browser & mobile) */}
+      <meta name="theme-color" content="#E10600" />
+    </Helmet>
+  );
+};
+
+export const ContactHelmet = () => {
+  const t = useLocalizedText("contact.seo");
+  const title = t("title");
+  const description = t("description");
+  const url = "https://nikaebralidze.dev/contact";
+
+  return (
+    <Helmet>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="author" content="Nika Ebralidze" />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href={url} />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:url" content={url} />
+      <meta property="og:site_name" content="Nika Ebralidze" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+
       <meta name="theme-color" content="#E10600" />
     </Helmet>
   );

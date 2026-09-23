@@ -144,8 +144,9 @@ const ka = {
     cta: {
       heading: "შევქმნათ რაიმე ერთად",
       description:
-        "ღია ვარ full-stack ან backend როლებისთვის: remote, hybrid ან on-site. მომწერე და მითხარი, რას აშენებ.",
+        "ღია ვარ full-stack ან backend როლებისთვის: remote, hybrid ან on-site. მითხარი, რას აშენებ.",
       emailLabel: "nikaebralidze21@gmail.com",
+      buttonLabel: "დამიკავშირდი",
       social: {
         github: "GitHub",
         linkedin: "LinkedIn",
@@ -190,6 +191,44 @@ const ka = {
             "თბილისში, საქართველო. ქართული მშობლიურია; ინგლისური B2 პროფესიული კითხვის, წერისა და საუბრისთვის, და აქტიურად ვიუმჯობესებ.",
         },
       },
+    },
+  },
+  contact: {
+    seo: {
+      title: "კონტაქტი | ნიკა ებრალიძე",
+      description:
+        "დაუკავშირდი ნიკა ებრალიძეს: ღიაა სრული განაკვეთის full-stack და backend როლებისთვის. თბილისი, საქართველო (GET, UTC+4).",
+    },
+    heading: "ვისაუბროთ",
+    description:
+      "მომწერე, თუ გაქვს როლი, პროექტი ან იდეა, რომელიც ემთხვევა. ვპასუხობ ელფოსტით.",
+    availability: {
+      primary: "ღია ვარ სრული განაკვეთის როლების / ახალი შესაძლებლობებისთვის",
+      secondary: "ასევე ხელმისაწვდომი ვარ freelance პროექტებისთვის",
+    },
+    email: {
+      label: "ელფოსტა",
+      hint: "საუკეთესო გზა დასაკავშირებლად",
+    },
+    location: {
+      label: "ლოკაცია",
+      city: "თბილისი, საქართველო",
+      timezoneLabel: "დროის სარტყელი",
+      timezone: "GET (UTC+4)",
+    },
+    stats: {
+      yearsValue: "2",
+      yearsLabel: "წელი კოდისა და შიფინგისა",
+      rolesValue: "Full-stack",
+      rolesLabel: "როლები პრიორიტეტით",
+    },
+    social: {
+      label: "სოციალური",
+      github: "GitHub",
+      facebook: "Facebook",
+    },
+    faq: {
+      heading: "მოკლე პასუხები",
     },
   },
   footer: {
