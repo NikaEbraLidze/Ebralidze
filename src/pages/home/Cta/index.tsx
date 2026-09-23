@@ -1,12 +1,13 @@
 import { Typography } from "@/components/typography";
 import Button from "@/components/button";
+import { SocialTextLinks } from "@/components/social-text-links";
 import styles from "./index.module.css";
 import { useLocalizedText } from "@/utils/hooks/useLocalizedText";
 import { useCtaContainer } from "./container";
 
 export const Cta = () => {
   const t = useLocalizedText("home.cta");
-  const { mailto, socialLinks } = useCtaContainer();
+  const { mailto, goToContact } = useCtaContainer();
 
   return (
     <section className={styles.section} id="contact">
@@ -24,36 +25,30 @@ export const Cta = () => {
           </Typography>
 
           <div className={styles.actions}>
-            <Button
-              variant="filled"
-              href={mailto}
-              label={t("emailLabel")}
-              containerClassName={styles.emailBtn}
-            />
-
-            <div className={styles.socials}>
+            <div className={styles.ctaButtons}>
               <Button
-                variant="text"
-                href={socialLinks.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                label={t("social.github")}
-                containerClassName={styles.socialLink}
-                labelClassName={styles.socialLinkLabel}
+                variant="filled"
+                href={mailto}
+                label={t("emailLabel")}
+                containerClassName={styles.emailBtn}
               />
-              <span className={styles.socialDot} aria-hidden>
-                ·
-              </span>
               <Button
-                variant="text"
-                href={socialLinks.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                label={t("social.linkedin")}
-                containerClassName={styles.socialLink}
-                labelClassName={styles.socialLinkLabel}
+                variant="outline"
+                label={t("buttonLabel")}
+                containerClassName={styles.contactBtn}
+                onClick={goToContact}
               />
             </div>
+
+            <SocialTextLinks
+              labels={{
+                github: t("social.github"),
+                linkedin: t("social.linkedin"),
+              }}
+              linkClassName={styles.socialLink}
+              labelClassName={styles.socialLinkLabel}
+              dotClassName={styles.socialDot}
+            />
           </div>
         </div>
       </div>

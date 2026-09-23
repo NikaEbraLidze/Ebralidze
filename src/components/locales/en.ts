@@ -144,8 +144,9 @@ const en = {
     cta: {
       heading: "Let's build something",
       description:
-        "Available for full-stack or backend roles: remote, hybrid, or on-site. Say hello and tell me what you're building.",
+        "Open to full-stack or backend roles: remote, hybrid, or on-site. Tell me what you're building.",
       emailLabel: "nikaebralidze21@gmail.com",
+      buttonLabel: "Get in touch",
       social: {
         github: "GitHub",
         linkedin: "LinkedIn",
@@ -190,6 +191,44 @@ const en = {
             "Based in Tbilisi, Georgia. Georgian is native; English is B2 for professional reading, writing, and speaking, and I'm actively improving.",
         },
       },
+    },
+  },
+  contact: {
+    seo: {
+      title: "Contact | Nika Ebralidze",
+      description:
+        "Get in touch with Nika Ebralidze: open to full-time full-stack and backend roles. Based in Tbilisi, Georgia (GET, UTC+4).",
+    },
+    heading: "Let's talk",
+    description:
+      "Say hello if you have a role, project, or idea that fits. I reply by email.",
+    availability: {
+      primary: "Open to full-time roles / new opportunities",
+      secondary: "Also available for freelance projects",
+    },
+    email: {
+      label: "Email",
+      hint: "Best way to reach me",
+    },
+    location: {
+      label: "Location",
+      city: "Tbilisi, Georgia",
+      timezoneLabel: "Timezone",
+      timezone: "GET (UTC+4)",
+    },
+    stats: {
+      yearsValue: "2",
+      yearsLabel: "years building & shipping",
+      rolesValue: "Full-stack",
+      rolesLabel: "roles preferred first",
+    },
+    social: {
+      label: "Social",
+      github: "GitHub",
+      facebook: "Facebook",
+    },
+    faq: {
+      heading: "Quick answers",
     },
   },
   footer: {

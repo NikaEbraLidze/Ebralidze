@@ -84,73 +84,6 @@
   gap: var(--spacing-ml);
 }
 
-.socials {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-}
-
-.socialBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.25em;
-  height: 2.25em;
-  border-radius: var(--radius-lg);
-  background: var(--color-bg-surface);
-  color: var(--color-text-primary);
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
-}
-
-.socialBtn:hover {
-  background: var(--color-text-primary);
-  color: var(--color-bg-primary);
-}
-
-.socialBtn:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 var(--spacing-xxs) var(--color-accent-focus);
-}
-
-.availableBadge {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-xxs);
-}
-
-.availableDot {
-  width: 0.5em;
-  height: 0.5em;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: var(--color-status-available);
-  box-shadow: 0 0 0 0 var(--color-status-available);
-  animation: availableFlick 1.8s ease-in-out infinite;
-}
-
-@keyframes availableFlick {
-  0%,
-  100% {
-    opacity: 1;
-    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-status-available) 45%, transparent);
-  }
-  45% {
-    opacity: 0.35;
-    box-shadow: 0 0 0 0.45em color-mix(in srgb, var(--color-status-available) 0%, transparent);
-  }
-  55% {
-    opacity: 1;
-    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-status-available) 35%, transparent);
-  }
-}
-
-.availableLabel {
-  color: var(--color-text-secondary);
-  white-space: nowrap;
-}
-
 .availableBadgeMobile {
   display: none;
 }
@@ -255,11 +188,6 @@
   .chevronIcon,
   .mobileMenu {
     transition: none;
-  }
-
-  .availableDot {
-    animation: none;
-    opacity: 1;
   }
 }
 

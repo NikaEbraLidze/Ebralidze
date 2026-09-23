@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import { useLang } from "../locales/index";
 import { useLocalizedText } from "@/utils/hooks/useLocalizedText";
 import { useLocation, useNavigate } from "react-router-dom";
-import { SOCIAL_LINKS } from "@/constants/social";
-import { scrollToSection } from "@/utils/scrollToSection";
 import type { NavLink } from "./index.types";
 
 export const useHeaderContainer = () => {
@@ -47,8 +45,9 @@ export const useHeaderContainer = () => {
     setMobileMenuOpen(false);
   };
 
-  const handleSectionClick = (sectionId: string) => {
-    scrollToSection(sectionId, navigate, location.pathname);
+  const handleContactClick = () => {
+    navigate("/contact");
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setMobileMenuOpen(false);
   };
 
@@ -68,21 +67,16 @@ export const useHeaderContainer = () => {
     {
       key: "contact",
       label: t("nav.contact"),
-      onClick: () => handleSectionClick("contact"),
+      onClick: handleContactClick,
+      isActive: location.pathname === "/contact",
     },
   ];
-
-  const socialLinks = {
-    github: SOCIAL_LINKS.github,
-    linkedin: SOCIAL_LINKS.linkedin,
-  };
 
   return {
     mobileMenuOpen,
     lang,
     t,
     navLinks,
-    socialLinks,
     toggleLang,
     toggleMobileMenu,
     handleLogoClick,

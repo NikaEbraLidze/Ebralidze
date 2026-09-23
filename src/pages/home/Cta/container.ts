@@ -1,11 +1,14 @@
-import { SOCIAL_LINKS, CONTACT_MAILTO } from "@/constants/social";
+import { CONTACT_MAILTO } from "@/constants/social";
+import { useNavigate } from "react-router-dom";
 
 export const useCtaContainer = () => {
+  const navigate = useNavigate();
+
   return {
     mailto: CONTACT_MAILTO,
-    socialLinks: {
-      github: SOCIAL_LINKS.github,
-      linkedin: SOCIAL_LINKS.linkedin,
+    goToContact: () => {
+      navigate("/contact");
+      window.scrollTo({ top: 0, behavior: "smooth" });
     },
   };
 };

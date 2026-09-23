@@ -2,8 +2,9 @@
   align-self: stretch;
   box-sizing: border-box;
   width: 100%;
-  background: var(--color-bg-primary);
-  padding: 0;
+  /* Experiment B: black band + white cards (A was cream + white) */
+  background: var(--color-text-primary);
+  padding: var(--spacing-xxxl) 0;
 }
 
 .inner {
@@ -29,7 +30,7 @@
   align-items: center;
   gap: var(--spacing-xs);
   text-decoration: none;
-  color: var(--color-text-secondary);
+  color: color-mix(in srgb, var(--color-bg-primary) 70%, transparent);
   white-space: nowrap;
 }
 
@@ -49,7 +50,7 @@
 }
 
 .heading {
-  color: var(--color-text-primary);
+  color: var(--color-bg-primary);
   letter-spacing: var(--letter-spacing-tight);
 }
 
@@ -75,10 +76,10 @@
   padding: var(--spacing-xl);
   text-decoration: none;
   color: inherit;
-  background: var(--color-bg-surface);
-  border: 1px solid var(--color-border-default);
+  background: var(--color-bg-primary);
+  border: 1px solid color-mix(in srgb, var(--color-bg-primary) 12%, transparent);
   border-radius: var(--radius-2xl);
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
   animation: sectionFadeUp 0.45s cubic-bezier(0.23, 1, 0.32, 1) both;
   cursor: pointer;
 }
@@ -104,8 +105,9 @@
 }
 
 .tile:hover {
-  border-color: color-mix(in srgb, var(--color-accent-primary) 45%, var(--color-border-default));
-  background: color-mix(in srgb, var(--color-bg-surface) 88%, var(--color-accent-muted));
+  border-color: color-mix(in srgb, var(--color-accent-primary) 55%, transparent);
+  background: color-mix(in srgb, var(--color-bg-primary) 94%, var(--color-accent-muted));
+  transform: translateY(-2px);
 }
 
 .tile:focus-visible {
@@ -285,5 +287,9 @@
 @media (prefers-reduced-motion: reduce) {
   .tile {
     animation: none;
+  }
+
+  .tile:hover {
+    transform: none;
   }
 }
