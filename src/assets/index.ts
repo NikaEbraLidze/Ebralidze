@@ -17,6 +17,7 @@ import EbralidzeLogo from "./icons/Ebralidze Logo.svg";
 import ChevronIcon from "./icons/ChevronIcon";
 import GitHubIcon from "./icons/GitHubIcon";
 import LinkedInIcon from "./icons/LinkedInIcon";
+import FacebookIcon from "./icons/FacebookIcon";
 
 export {
   ProfilePhoto,
@@ -27,7 +28,7 @@ export {
   CSharpProject,
 };
 
-export { ChevronIcon, GitHubIcon, LinkedInIcon };
+export { ChevronIcon, GitHubIcon, LinkedInIcon, FacebookIcon };
 
 export {
   EbralidzeLogo,

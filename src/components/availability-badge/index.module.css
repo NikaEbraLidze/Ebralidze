@@ -1,0 +1,44 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xxs) var(--spacing-m);
+  background: var(--color-status-available-muted);
+  border-radius: var(--radius-full);
+  align-self: flex-start;
+}
+
+.dot {
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background: var(--color-status-available);
+  flex-shrink: 0;
+  animation: availableFlick 1.8s ease-in-out infinite;
+}
+
+@keyframes availableFlick {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-status-available) 45%, transparent);
+  }
+  45% {
+    opacity: 0.35;
+    box-shadow: 0 0 0 0.45em color-mix(in srgb, var(--color-status-available) 0%, transparent);
+  }
+  55% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-status-available) 35%, transparent);
+  }
+}
+
+.label {
+  color: var(--color-text-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    animation: none;
+  }
+}

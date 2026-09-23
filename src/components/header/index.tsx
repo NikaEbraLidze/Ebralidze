@@ -1,7 +1,9 @@
 import styles from "./index.module.css";
 import Button from "../button";
 import { Typography } from "../typography";
-import { ChevronIcon, GitHubIcon, LinkedInIcon } from "@/assets";
+import { ChevronIcon } from "@/assets";
+import { AvailabilityBadge } from "@/components/availability-badge";
+import { SocialIconLinks } from "@/components/social-icon-links";
 import { useHeaderContainer } from "./container";
 import clsx from "clsx";
 
@@ -11,7 +13,6 @@ export const Header = () => {
     lang,
     t,
     navLinks,
-    socialLinks,
     toggleLang,
     toggleMobileMenu,
     handleLogoClick,
@@ -28,36 +29,15 @@ export const Header = () => {
   );
 
   const socials = (
-    <div className={styles.socials}>
-      <a
-        className={styles.socialBtn}
-        href={socialLinks.github}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={t("social.github")}
-      >
-        <GitHubIcon />
-      </a>
-      <a
-        className={styles.socialBtn}
-        href={socialLinks.linkedin}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={t("social.linkedin")}
-      >
-        <LinkedInIcon />
-      </a>
-    </div>
+    <SocialIconLinks
+      labels={{
+        github: t("social.github"),
+        linkedin: t("social.linkedin"),
+      }}
+    />
   );
 
-  const availableBadge = (
-    <div className={styles.availableBadge}>
-      <span className={styles.availableDot} aria-hidden />
-      <Typography as="span" size={13} weight="medium" className={styles.availableLabel}>
-        {t("availableBadge")}
-      </Typography>
-    </div>
-  );
+  const availableBadge = <AvailabilityBadge label={t("availableBadge")} />;
 
   return (
     <header className={styles.header}>

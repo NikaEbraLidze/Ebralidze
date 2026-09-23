@@ -69,6 +69,12 @@
   align-items: center;
 }
 
+.icon:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 var(--spacing-xxs) var(--color-accent-focus);
+  border-radius: var(--radius-sm);
+}
+
 /* ===== States ===== */
 
 .fullWidth {

@@ -11,7 +11,9 @@ import {
 } from "@/assets";
 import { Typography } from "@/components/typography";
 import Button from "@/components/button";
+import { AvailabilityBadge } from "@/components/availability-badge";
 import { useLocalizedText } from "@/utils/hooks/useLocalizedText";
+import { useNavigate } from "react-router-dom";
 import { useScrollToSection } from "./container";
 
 const stackItems = [
@@ -26,18 +28,14 @@ const stackItems = [
 
 export const Hero = () => {
   const t = useLocalizedText("home.heroSection");
+  const navigate = useNavigate();
   const scrollToSection = useScrollToSection();
 
   return (
     <section className={styles.section} id="hero">
       <div className={styles.inner}>
         <div className={styles.copy}>
-          <div className={styles.badge}>
-            <span className={styles.badgeDot} aria-hidden />
-            <Typography as="span" size={13} weight="medium" className={styles.badgeLabel}>
-              {t("badge")}
-            </Typography>
-          </div>
+          <AvailabilityBadge label={t("badge")} className={styles.badge} />
 
           <Typography as="p" size={16} weight="medium" className={styles.greeting}>
             {t("greeting")}
@@ -63,7 +61,10 @@ export const Hero = () => {
               variant="filled"
               label={t("cta.primary")}
               containerClassName={styles.ctaFilled}
-              onClick={() => scrollToSection("contact")}
+              onClick={() => {
+                navigate("/contact");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
             />
             <Button
               variant="outline"
