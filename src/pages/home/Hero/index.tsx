@@ -1,30 +1,12 @@
 import styles from "./index.module.css";
-import {
-  ProfilePhoto,
-  TypeScript,
-  ReactIcon,
-  Node,
-  PostgreSQL,
-  CSharp,
-  ASPNET,
-  SQLServer,
-} from "@/assets";
+import { ProfilePhoto } from "@/assets";
 import { Typography } from "@/components/typography";
 import Button from "@/components/button";
 import { AvailabilityBadge } from "@/components/availability-badge";
 import { useLocalizedText } from "@/utils/hooks/useLocalizedText";
 import { useNavigate } from "react-router-dom";
 import { useScrollToSection } from "./container";
-
-const stackItems = [
-  { src: TypeScript, label: "TypeScript" },
-  { src: ReactIcon, label: "React" },
-  { src: Node, label: "Node.js" },
-  { src: PostgreSQL, label: "PostgreSQL" },
-  { src: CSharp, label: "C#" },
-  { src: ASPNET, label: "ASP.NET" },
-  { src: SQLServer, label: "SQL Server" },
-];
+import { BuddyContainer } from "./Buddy/container";
 
 export const Hero = () => {
   const t = useLocalizedText("home.heroSection");
@@ -76,29 +58,8 @@ export const Hero = () => {
         </div>
 
         <div className={styles.bento}>
-          <div className={styles.tileStack}>
-            <Typography as="p" size={13} weight="semibold" className={styles.stackLabel}>
-              {t("bento.stackLabel")}
-            </Typography>
-            <ul className={styles.stackList}>
-              {stackItems.map((item) => (
-                <li key={item.label} className={styles.stackChip}>
-                  <span className={styles.stackIconWrap}>
-                    <img
-                      src={item.src}
-                      alt=""
-                      className={styles.stackIcon}
-                      width={18}
-                      height={18}
-                      loading="eager"
-                    />
-                  </span>
-                  <Typography as="span" size={12} weight="medium" className={styles.stackName}>
-                    {item.label}
-                  </Typography>
-                </li>
-              ))}
-            </ul>
+          <div className={styles.tileBuddy}>
+            <BuddyContainer />
           </div>
 
           <div className={styles.tilePortrait}>

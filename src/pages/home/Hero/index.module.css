@@ -92,7 +92,7 @@
   animation-delay: 100ms;
 }
 
-.tileStack,
+.tileBuddy,
 .tilePortrait,
 .tileStat {
   position: relative;
@@ -102,73 +102,20 @@
   cursor: pointer;
 }
 
-.tileStack *,
+.tileBuddy *,
 .tilePortrait *,
 .tileStat * {
   cursor: pointer;
 }
 
-.tileStack {
+.tileBuddy {
   grid-column: 1;
   grid-row: 1;
   display: flex;
-  flex-direction: column;
-  gap: var(--spacing-m);
-  padding: var(--spacing-xl);
-  min-height: 0;
-}
-
-.stackLabel {
-  color: var(--color-text-primary);
-}
-
-.stackList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-xs);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.stackChip {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-  padding: var(--spacing-xxs) var(--spacing-m) var(--spacing-xxs) var(--spacing-xxs);
-  border-radius: var(--radius-full);
-  background: var(--color-bg-surface);
-  border: 1px solid transparent;
-  transition:
-    border-color 0.2s ease,
-    background-color 0.2s ease;
-}
-
-.stackChip:hover {
-  border-color: var(--color-accent-primary);
-  background: var(--color-accent-muted);
-}
-
-.stackIconWrap {
-  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.75em;
-  height: 1.75em;
-  border-radius: var(--radius-full);
-  background: var(--color-bg-primary);
-  flex-shrink: 0;
-}
-
-.stackIcon {
-  width: 1em;
-  height: 1em;
-  object-fit: contain;
-}
-
-.stackName {
-  color: var(--color-text-primary);
-  white-space: nowrap;
+  padding: var(--spacing-m);
+  min-height: 0;
 }
 
 .tilePortrait {
@@ -310,8 +257,8 @@
     min-height: 16em;
   }
 
-  .tileStack {
-    min-height: 7.5em;
+  .tileBuddy {
+    min-height: 10em;
   }
 
   .tileStat {
@@ -333,16 +280,20 @@
     grid-template-rows: none;
   }
 
-  .tileStack,
+  .tileBuddy,
   .tilePortrait,
   .tileStat {
     grid-column: auto;
     grid-row: auto;
   }
 
+  .tileBuddy {
+    height: 14em;
+  }
+
   .tilePortrait {
     order: -1;
-    min-height: 14em;
-    max-height: 18em;
+    min-height: 24em;
+    max-height: 28em;
   }
 }

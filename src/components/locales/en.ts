@@ -37,7 +37,7 @@ const en = {
       profileAlt: "Nikoloz Ebralidze profile photo",
       badge: "Open to new opportunities",
       bento: {
-        stackLabel: "Main stack",
+        buddyLabel: "Animated robot following your cursor",
         statValue: "2",
         statLabel: "years building & shipping",
       },
