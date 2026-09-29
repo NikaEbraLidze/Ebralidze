@@ -293,7 +293,7 @@
 
   .tilePortrait {
     order: -1;
-    min-height: 14em;
-    max-height: 18em;
+    min-height: 24em;
+    max-height: 28em;
   }
 }
