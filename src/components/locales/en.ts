@@ -241,7 +241,7 @@ const en = {
     copyright: "© 2026 Ebralidze. All rights reserved.",
     signature: {
       design: "Design & Code by ME",
-      updated: "Last Updated: Jan 2026",
+      updated: "Last Updated: Sep 2026",
     },
   },
 };
